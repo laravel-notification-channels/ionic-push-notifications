@@ -2,8 +2,6 @@
 
 namespace NotificationChannels\IonicPushNotifications;
 
-use NotificationChannels\IonicPushNotifications\Exceptions\CouldNotCreateMessage;
-
 class IonicPushMessage
 {
     /** @var array */
@@ -18,7 +16,7 @@ class IonicPushMessage
     {
         return new static($data);
     }
-    
+
     /**
      * @param array $data
      */
