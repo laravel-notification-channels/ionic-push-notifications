@@ -106,7 +106,7 @@ class IonicPushMessage
     }
 
     /**
-     * Dynamically add query parameters or call API endpoints.
+     * Dynamically add device specific data.
      *
      * @param string $method
      * @param array  $args
