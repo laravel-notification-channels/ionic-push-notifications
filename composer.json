@@ -1,0 +1,38 @@
+{
+    "name": "laravel-notification-channels/ionic-push-notifications",
+    "description": "Ionic Push Notifications driver",
+    "homepage": "https://github.com/laravel-notification-channels/ionic-push-notifications",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mark Beech",
+            "email": "m@rkbee.ch",
+            "homepage": "http://ma.rkbee.ch"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.4",
+        "guzzlehttp/guzzle": "~6.0",
+        "illuminate/notifications": "^5.3@dev",
+        "illuminate/support": "^5.3@dev"
+    },
+    "require-dev": {
+        "mockery/mockery": "^0.9.5",
+        "phpunit/phpunit": "4.*",
+        "orchestra/testbench": "^3.3@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "NotificationChannels\\IonicPushNotifications\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "NotificationChannels\\IonicPushNotifications\\Test\\": "tests"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev"
+}
