@@ -4,8 +4,6 @@ namespace NotificationChannels\IonicPushNotifications;
 
 use GuzzleHttp\Client;
 use NotificationChannels\IonicPushNotifications\Exceptions\CouldNotSendNotification;
-use NotificationChannels\IonicPushNotifications\Events\MessageWasSent;
-use NotificationChannels\IonicPushNotifications\Events\SendingMessage;
 use Illuminate\Notifications\Notification;
 use NotificationChannels\IonicPushNotifications\Exceptions\InvalidConfiguration;
 
@@ -52,7 +50,7 @@ class IonicPushChannel
             'headers' => [
                 'Authorization' => 'Bearer '.$key,
                 'Content-Type' => 'application/json',
-            ]
+            ],
         ]);
 
         if ($response->getStatusCode() !== 201) {
