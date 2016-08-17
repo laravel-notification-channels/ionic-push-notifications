@@ -97,6 +97,7 @@ class TestNotification extends Notification
                 ],
             ],
         ];
+
         return IonicPushMessage::create($data);
     }
 }
