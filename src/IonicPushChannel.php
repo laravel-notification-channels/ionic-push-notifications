@@ -37,18 +37,21 @@ class IonicPushChannel
             return;
         }
 
-        $key = config('services.ionicpush.key');
+        $authorizationKey = config('services.ionicpush.key');
 
-        if (is_null($key)) {
+        if (is_null($authorizationKey)) {
             throw InvalidConfiguration::configurationNotSet();
         }
 
-        $ionicPushData = array_merge($notification->toIonicPush($notifiable)->toArray(), ['tokens' => $routing->first()]);
+        $ionicPushData = array_merge(
+            $notification->toIonicPush($notifiable)->toArray(),
+            ['tokens' => $routing->first()]
+        );
 
         $response = $this->client->post(self::API_ENDPOINT, [
             'body' => json_encode($ionicPushData),
             'headers' => [
-                'Authorization' => 'Bearer '.$key,
+                'Authorization' => "Bearer {$authorizationKey}",
                 'Content-Type' => 'application/json',
             ],
         ]);
