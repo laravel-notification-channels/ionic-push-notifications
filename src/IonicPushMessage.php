@@ -29,8 +29,6 @@ class IonicPushMessage
     /** @var array */
     protected $androidData = [];
 
-
-
     /**
      * @param array $data
      *
@@ -61,6 +59,7 @@ class IonicPushMessage
     public function profile($profile)
     {
         $this->profile = $profile;
+
         return $this;
     }
 
@@ -74,6 +73,7 @@ class IonicPushMessage
     public function sendTo($sendTo)
     {
         $this->sendTo = $sendTo;
+
         return $this;
     }
 
@@ -87,6 +87,7 @@ class IonicPushMessage
     public function sound($sound)
     {
         $this->sound = $sound;
+
         return $this;
     }
 
@@ -100,9 +101,9 @@ class IonicPushMessage
     public function payload($payload)
     {
         $this->payload = $payload;
+
         return $this;
     }
-
 
     /**
      * Dynamically add query parameters or call API endpoints.
@@ -123,6 +124,7 @@ class IonicPushMessage
 
             $this->androidData[$key] = $args[0];
         }
+
         return $this;
     }
 
