@@ -10,7 +10,7 @@
          processIsolation="false"
          stopOnFailure="false">
     <testsuites>
-        <testsuite name="Backport Test Suite">
+        <testsuite name="Ionic Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
