@@ -10,7 +10,7 @@
 
 This package makes it easy to send [Ionic Push Notifications](http://docs.ionic.io/docs/push-overview) with Laravel 5.3.
 
-## Contents
+## Content
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -36,10 +36,9 @@ Add your Ionic Push Authentication Token to your `config/services.php`:
 
 ```php
 // config/services.php
-
-    'ionicpush' => [
-        'key' => env('IONICPUSH_API_KEY'),
-    ]
+'ionicpush' => [
+    'key' => env('IONIC_PUSH_API_KEY'),
+]
 ```
 
 
@@ -98,6 +97,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 ## Credits
 
 - [Mark Beech](https://github.com/JayBizzle)
+- [All Contributors](../../contributors)
 
 ## License
 
