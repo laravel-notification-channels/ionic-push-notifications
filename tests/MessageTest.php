@@ -3,7 +3,6 @@
 namespace NotificationChannels\IonicPushNotifications\Test;
 
 use Illuminate\Support\Arr;
-use NotificationChannels\IonicPushNotifications\Exceptions\CouldNotCreateMessage;
 use NotificationChannels\IonicPushNotifications\IonicPushMessage;
 use PHPUnit_Framework_TestCase;
 
@@ -69,5 +68,4 @@ class MessageTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals('ionitron.png', Arr::get($this->message->toArray(), 'notification.android.icon'));
     }
-    
 }
