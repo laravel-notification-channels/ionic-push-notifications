@@ -26,7 +26,7 @@ class ChannelTest extends TestCase
             ->once()
             ->with('https://api.ionic.io/push/notifications',
                 [
-                    'body' => '{"profile":"my-security-profile","notification":{"message":"A message to your user","ios":{"badge":1,"sound":"ping.aiff"}},"tokens":"device_token"}',
+                    'body' => '{"tokens":"device_token","profile":"my-security-profile","notification":{"message":"A message to your user","ios":{"badge":1,"sound":"ping.aiff"}}}',
                     'headers' => [
                         'Authorization' => 'Bearer IonicKey',
                         'Content-Type' => 'application/json',
@@ -98,6 +98,10 @@ class TestNotification extends Notification
             ],
         ];
 
-        return IonicPushMessage::create($data);
+        return IonicPushMessage::create('my-security-profile')
+            ->message('A message to your user')
+            ->profile('my-security-profile')
+            ->iosBadge(1)
+            ->iosSound('ping.aiff');
     }
 }
