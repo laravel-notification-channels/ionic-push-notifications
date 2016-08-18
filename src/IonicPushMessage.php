@@ -129,13 +129,13 @@ class IonicPushMessage
         if (substr($method, 0, 3) == 'ios') {
             $key = snake_case(substr($method, 3));
 
-            if(in_array($key, $this->allowediOSOptions())) {
+            if (in_array($key, $this->allowediOSOptions())) {
                 $this->iosData[$key] = $args[0];
             }
         } elseif (substr($method, 0, 7) == 'android') {
             $key = snake_case(substr($method, 7));
 
-            if(in_array($key, $this->allowedAndroidOptions())) {
+            if (in_array($key, $this->allowedAndroidOptions())) {
                 $this->androidData[$key] = $args[0];
             }
         }
@@ -155,7 +155,7 @@ class IonicPushMessage
 
     /**
      * List of allowed Android options.
-     * 
+     *
      * @return array
      */
     public function allowedAndroidOptions()
@@ -178,7 +178,7 @@ class IonicPushMessage
 
     /**
      * List of allowed iOS options.
-     * 
+     *
      * @return array
      */
     public function allowediOSOptions()
