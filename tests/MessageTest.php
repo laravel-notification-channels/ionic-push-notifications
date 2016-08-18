@@ -76,4 +76,12 @@ class MessageTest extends PHPUnit_Framework_TestCase
 
         $this->assertTrue(Arr::has($this->message->toArray(), 'notification.ios.content_available'));
     }
+
+    /** @test */
+    public function it_wont_let_us_add_invalid_device_specific_options()
+    {
+        $this->message->iosFooBar(1);
+
+        $this->assertFalse(Arr::has($this->message->toArray(), 'notification.ios.foo_bar'));
+    }
 }
