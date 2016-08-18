@@ -43,9 +43,11 @@ class IonicPushChannel
             throw InvalidConfiguration::configurationNotSet();
         }
 
+        $message = $notification->toIonicPush($notifiable);
+
         $ionicPushData = array_merge(
-            $notification->toIonicPush($notifiable)->toArray(),
-            ['tokens' => $routing->first()]
+            $message->toArray(),
+            [$message->getSendToType() => $routing->first()]
         );
 
         $response = $this->client->post(self::API_ENDPOINT, [
