@@ -19,7 +19,6 @@ class IonicPushMessage
     /** @var string */
     protected $sound = '';
 
-
     /** @var array */
     protected $payload = [];
 
