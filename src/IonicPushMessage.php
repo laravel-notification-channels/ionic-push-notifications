@@ -129,7 +129,7 @@ class IonicPushMessage
 
     /**
      * Get the method we want to use to send messages.
-     *    
+     *
      * @return string
      */
     public function getSendToType()
