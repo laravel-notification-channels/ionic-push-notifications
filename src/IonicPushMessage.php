@@ -163,6 +163,10 @@ class IonicPushMessage
             ],
         ];
 
+        if (! empty($this->sound)) {
+            $data['notification']['sound'] = $this->sound;
+        }
+
         if (! empty($this->iosData)) {
             $data['notification']['ios'] = $this->iosData;
         }
