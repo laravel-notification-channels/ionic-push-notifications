@@ -33,33 +33,17 @@ class IonicPushMessage
      *
      * @return static
      */
-    public static function create($title, $message)
+    public static function create($profile)
     {
-        return new static($title, $message);
+        return new static($profile);
     }
 
     /**
-     * @param string $title
-     * @param string $message
+     * @param string $profile
      */
-    public function __construct($title, $message)
-    {
-        $this->title = $title;
-        $this->message = $message;
-    }
-
-    /**
-     * Set the security profile to use.
-     *
-     * @param  string  $profile
-     *
-     * @return $this
-     */
-    public function profile($profile)
+    public function __construct($profile)
     {
         $this->profile = $profile;
-
-        return $this;
     }
 
     /**
@@ -72,6 +56,34 @@ class IonicPushMessage
     public function sendTo($sendTo)
     {
         $this->sendTo = $sendTo;
+
+        return $this;
+    }
+
+    /**
+     * Set the title.
+     *
+     * @param  string  $title
+     *
+     * @return $this
+     */
+    public function title($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Set the message.
+     *
+     * @param  string  $message
+     *
+     * @return $this
+     */
+    public function message($message)
+    {
+        $this->message = $message;
 
         return $this;
     }
