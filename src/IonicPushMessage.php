@@ -129,11 +129,15 @@ class IonicPushMessage
         if (substr($method, 0, 3) == 'ios') {
             $key = snake_case(substr($method, 3));
 
-            $this->iosData[$key] = $args[0];
+            if(in_array($key, $this->allowediOSOptions())) {
+                $this->iosData[$key] = $args[0];
+            }
         } elseif (substr($method, 0, 7) == 'android') {
             $key = snake_case(substr($method, 7));
 
-            $this->androidData[$key] = $args[0];
+            if(in_array($key, $this->allowedAndroidOptions())) {
+                $this->androidData[$key] = $args[0];
+            }
         }
 
         return $this;
@@ -147,6 +151,48 @@ class IonicPushMessage
     public function getSendToType()
     {
         return $this->sendTo;
+    }
+
+    /**
+     * List of allowed Android options.
+     * 
+     * @return array
+     */
+    public function allowedAndroidOptions()
+    {
+        return [
+            'collapse_key',
+            'content_available',
+            'data',
+            'delay_while_idle',
+            'icon',
+            'icon_color',
+            'message',
+            'priortiy',
+            'sound',
+            'tag',
+            'time_to_live',
+            'title',
+        ];
+    }
+
+    /**
+     * List of allowed iOS options.
+     * 
+     * @return array
+     */
+    public function allowediOSOptions()
+    {
+        return [
+            'message',
+            'title',
+            'badge',
+            'payload',
+            'sound',
+            'priortiy',
+            'expire',
+            'content_available',
+        ];
     }
 
     /**
