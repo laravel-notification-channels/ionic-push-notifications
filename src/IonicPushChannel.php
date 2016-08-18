@@ -46,8 +46,8 @@ class IonicPushChannel
         $message = $notification->toIonicPush($notifiable);
 
         $ionicPushData = array_merge(
-            $message->toArray(),
-            [$message->getSendToType() => $routing->first()]
+            [$message->getSendToType() => $routing->first()],
+            $message->toArray()
         );
 
         $response = $this->client->post(self::API_ENDPOINT, [
