@@ -142,6 +142,27 @@ class IonicPushMessage
      */
     public function toArray()
     {
-        return $this->data;
+        $data = [
+            'profile' => $this->profile,
+            'notification' => [
+                'title' => $this->title,
+                'message' => $this->message,
+                'sound' => $this->sound,
+            ],
+        ];
+
+        if (! empty($this->iosData)) {
+            $data['notification']['ios'] = $this->iosData;
+        }
+
+        if (! empty($this->androidData)) {
+            $data['notification']['android'] = $this->androidData;
+        }
+
+        if (! empty($this->payload)) {
+            $data['notification']['payload'] = $this->payload;
+        }
+
+        return $data;
     }
 }
