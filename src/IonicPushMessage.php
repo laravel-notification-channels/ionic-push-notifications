@@ -158,7 +158,6 @@ class IonicPushMessage
             'profile' => $this->profile,
             'notification' => [
                 'message' => $this->message,
-                'sound' => $this->sound,
             ],
         ];
 
