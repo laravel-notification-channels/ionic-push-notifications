@@ -76,5 +76,4 @@ class MessageTest extends PHPUnit_Framework_TestCase
 
         $this->assertTrue(Arr::has($this->message->toArray(), 'notification.ios.content_available'));
     }
-    
 }
