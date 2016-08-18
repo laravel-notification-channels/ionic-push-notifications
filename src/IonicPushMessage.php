@@ -5,28 +5,28 @@ namespace NotificationChannels\IonicPushNotifications;
 class IonicPushMessage
 {
     /** @var string */
-    protected $sendTo = 'tokens';
+    public $sendTo = 'tokens';
 
     /** @var string */
-    protected $profile;
+    public $profile;
 
     /** @var string */
-    protected $title = '';
+    public $title = '';
 
     /** @var string */
-    protected $message = '';
+    public $message = '';
 
     /** @var string */
-    protected $sound = '';
+    public $sound = '';
 
     /** @var array */
-    protected $payload = [];
+    public $payload = [];
 
     /** @var array */
-    protected $iosData = [];
+    public $iosData = [];
 
     /** @var array */
-    protected $androidData = [];
+    public $androidData = [];
 
     /**
      * @param array $data
