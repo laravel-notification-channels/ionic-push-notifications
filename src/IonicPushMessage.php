@@ -157,11 +157,14 @@ class IonicPushMessage
         $data = [
             'profile' => $this->profile,
             'notification' => [
-                'title' => $this->title,
                 'message' => $this->message,
                 'sound' => $this->sound,
             ],
         ];
+
+        if (! empty($this->title)) {
+            $data['notification']['title'] = $this->title;
+        }
 
         if (! empty($this->sound)) {
             $data['notification']['sound'] = $this->sound;
