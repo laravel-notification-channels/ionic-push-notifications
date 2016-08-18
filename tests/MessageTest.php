@@ -3,7 +3,6 @@
 namespace NotificationChannels\IonicPushNotifications\Test;
 
 use Illuminate\Support\Arr;
-use NotificationChannels\IonicPushNotifications\Exceptions\CouldNotCreateMessage;
 use NotificationChannels\IonicPushNotifications\IonicPushMessage;
 use PHPUnit_Framework_TestCase;
 
@@ -69,13 +68,4 @@ class MessageTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals('ionitron.png', Arr::get($this->message->toArray(), 'notification.android.icon'));
     }
-
-    /** @test */
-    public function it_converts_camel_case_method_name_to_snake_case_array_key()
-    {
-        $this->message->iosContentAvailable(1);
-
-        $this->assertTrue(Arr::has($this->message->toArray(), 'notification.ios.content_available'));
-    }
-    
 }
