@@ -73,7 +73,6 @@ class FriendRequest extends Notification
 You can easily set different setting for iOS and android individually like this...
 
 ```php
-``` php
 use NotificationChannels\IonicPushNotifications\IonicPushChannel;
 use NotificationChannels\IonicPushNotifications\IonicPushMessage;
 use Illuminate\Notifications\Notification;
@@ -106,6 +105,41 @@ public function routeNotificationForIonicPush()
     return $this->device_token;
 }
 ```
+
+### Available Message methods
+
+- `create()`: Accepts a string value of `your-security-profile`.
+- `title()`: The title of your notification (for all platforms). Can be overwritten by platform specific `title` method (see below).
+- `message()`: The message content of your notification (for all platforms). Can be overwritten by platform specific `message` method (see below). 
+- `sound()`: The title of your notification (for all platforms). Can be overwritten by platform specific `sound` method (see below).
+- `payload()`: An array of data to send with your notification. Can be overwritten by platform specific `payload` method (see below).
+
+#### iOS specific methods
+[See here](http://docs.ionic.io/v2.0.0-beta/docs/push-sending-push#section-basic-api-usage) for full details on these methods.
+- `iosMessage()`
+- `iosTitle()`
+- `iosBadge()`
+- `iosPayload()`
+- `iosSound()`
+- `iosPriortiy()`
+- `iosExpire()`
+- `iosContentAvailable()`
+
+#### Android specific methods
+[See here](http://docs.ionic.io/v2.0.0-beta/docs/push-sending-push#section-basic-api-usage) for full details on these methods.
+- `androidCollapseKey()`
+- `androidContentAvailable()`
+- `androidData()`
+- `androidDelayWhileIdle()`
+- `androidIcon()`
+- `androidIconColor()`
+- `androidMessage()`
+- `androidPriortiy()`
+- `androidSound()`
+- `androidTag()`
+- `androidTimeToLive()`
+- `androidTitle()`
+
 
 ## Changelog
 
