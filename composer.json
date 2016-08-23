@@ -19,7 +19,7 @@
     "require-dev": {
         "mockery/mockery": "^0.9.5",
         "phpunit/phpunit": "4.*",
-        "orchestra/testbench": "^3.3@dev"
+        "orchestra/testbench": "3.3.x-dev"
     },
     "autoload": {
         "psr-4": {
@@ -36,6 +36,5 @@
     },
     "config": {
         "sort-packages": true
-    },
-    "minimum-stability": "dev"
+    }
 }
