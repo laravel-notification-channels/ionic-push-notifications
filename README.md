@@ -47,7 +47,7 @@ Add your Ionic Push Authentication Token to your `config/services.php`:
 
 Now you can use the channel in your `via()` method inside the notification:
 
-``` php
+```php
 use NotificationChannels\IonicPushNotifications\IonicPushChannel;
 use NotificationChannels\IonicPushNotifications\IonicPushMessage;
 use Illuminate\Notifications\Notification;
