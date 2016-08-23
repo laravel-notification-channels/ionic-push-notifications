@@ -1,4 +1,4 @@
-# Ionic push notifications channel for Laravel 5.3
+# Ionic Push Notifications Channel for Laravel 5.3
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/laravel-notification-channels/ionic-push-notifications.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/ionic-push-notifications)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
@@ -61,14 +61,44 @@ class FriendRequest extends Notification
 
     public function toIonicPush($notifiable)
     {
-        return IonicPushMessage::create($data);
+        return IonicPushMessage::create('my-security-profile')
+            ->title('Your title')
+            ->message('Your message')
+            ->sound('ping.aiff')
+            ->payload(['foo' => 'bar');
+    }
+}
+```
+
+You can easily set different setting for iOS and android individually like this...
+
+```php
+``` php
+use NotificationChannels\IonicPushNotifications\IonicPushChannel;
+use NotificationChannels\IonicPushNotifications\IonicPushMessage;
+use Illuminate\Notifications\Notification;
+
+class FriendRequest extends Notification
+{
+    public function via($notifiable)
+    {
+        return [IonicPushChannel::class];
+    }
+
+    public function toIonicPush($notifiable)
+    {
+        return IonicPushMessage::create('my-security-profile')
+            ->iosMessage('Your iOS message')
+            ->androidMessage('Your iOS message')
+            ->iosSound('ping.aiff')
+            ->androidSound('ping.aiff');
     }
 }
 ```
 
 In order to let your Notification know which device token to send to, add the `routeNotificationForIonicPush` method to your Notifiable model.
 
-This method needs to return the device token of the user.
+This method needs to return the device token of the user (or the Ionic Auth email address, or Ionic userID of the user).
 
 ```php
 public function routeNotificationForIonicPush()
