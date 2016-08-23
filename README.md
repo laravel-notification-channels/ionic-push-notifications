@@ -15,6 +15,7 @@ This package makes it easy to send [Ionic Push Notifications](http://docs.ionic.
 
 - [Installation](#installation)
 - [Usage](#usage)
+	- [Available Message methods](#available-message-methods)
 - [Changelog](#changelog)
 - [Testing](#testing)
 - [Security](#security)
