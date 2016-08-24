@@ -2,6 +2,8 @@
 
 namespace NotificationChannels\IonicPushNotifications;
 
+use DateTime;
+
 class IonicPushMessage
 {
     /** @var string */
@@ -18,6 +20,9 @@ class IonicPushMessage
 
     /** @var string */
     public $sound = '';
+
+    /** @var DateTime */
+    public $scheduled = '';
 
     /** @var array */
     public $payload = [];
@@ -117,6 +122,23 @@ class IonicPushMessage
     }
 
     /**
+     * Schedule the message for later delivery.
+     * 
+     * @param  string|DateTime $date
+     * @return $this
+     */
+    public function scheduled($date)
+    {
+        if (! $date instanceof DateTime) {
+            $date = new DateTime($date);
+        }
+
+        $this->scheduled = $date->format(DateTime::RFC3339);
+
+        return $this;
+    }
+
+    /**
      * Dynamically add device specific data.
      *
      * @param string $method
@@ -206,6 +228,10 @@ class IonicPushMessage
                 'message' => $this->message,
             ],
         ];
+
+        if (! empty($this->scheduled)) {
+            $data['scheduled'] = $this->scheduled;
+        }
 
         if (! empty($this->title)) {
             $data['notification']['title'] = $this->title;
