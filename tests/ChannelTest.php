@@ -87,17 +87,6 @@ class TestNotification extends Notification
 {
     public function toIonicPush($notifiable)
     {
-        $data = [
-            'profile' => 'my-security-profile',
-            'notification' => [
-                'message' => 'A message to your user',
-                'ios' => [
-                    'badge' => 1,
-                    'sound' => 'ping.aiff',
-                ],
-            ],
-        ];
-
         return IonicPushMessage::create('my-security-profile')
             ->message('A message to your user')
             ->profile('my-security-profile')
