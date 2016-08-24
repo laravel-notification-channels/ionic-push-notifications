@@ -71,7 +71,7 @@ class FriendRequest extends Notification
 }
 ```
 
-You can easily set different setting for iOS and android individually like this...
+You can easily set different settings for iOS and Android individually like this...
 
 ```php
 use NotificationChannels\IonicPushNotifications\IonicPushChannel;
