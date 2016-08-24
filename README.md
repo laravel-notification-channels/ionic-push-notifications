@@ -114,6 +114,7 @@ public function routeNotificationForIonicPush()
 - `message()`: The message content of your notification (for all platforms). Can be overwritten by platform specific `message` method (see below). 
 - `sound()`: The title of your notification (for all platforms). Can be overwritten by platform specific `sound` method (see below).
 - `payload()`: An array of data to send with your notification. Can be overwritten by platform specific `payload` method (see below).
+- `scheduled()`: Schedule a notification for future delivery. Accept `DateTime` object or a date as a string.
 
 #### iOS specific methods
 [See here](http://docs.ionic.io/v2.0.0-beta/docs/push-sending-push#section-basic-api-usage) for full details on these methods.
