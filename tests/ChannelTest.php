@@ -39,6 +39,30 @@ class ChannelTest extends TestCase
     }
 
     /** @test */
+    public function it_can_send_a_notification_using_ionic_authed_user_email_address()
+    {
+        $this->app['config']->set('services.ionicpush.key', 'IonicKey');
+
+        $response = new Response(201);
+
+        $client = Mockery::mock(Client::class);
+        $client->shouldReceive('post')
+            ->once()
+            ->with('https://api.ionic.io/push/notifications',
+                [
+                    'body' => '{"emails":"device_token","profile":"my-security-profile","notification":{"message":"A message to your user","ios":{"badge":1,"sound":"ping.aiff"}}}',
+                    'headers' => [
+                        'Authorization' => 'Bearer IonicKey',
+                        'Content-Type' => 'application/json',
+                    ],
+                ])
+            ->andReturn($response);
+
+        $channel = new IonicPushChannel($client);
+        $channel->send(new TestNotifiable(), new TestNotificationToEmail());
+    }
+
+    /** @test */
     public function it_throws_an_exception_when_it_is_not_configured()
     {
         $this->setExpectedException(InvalidConfiguration::class);
@@ -88,6 +112,19 @@ class TestNotification extends Notification
     public function toIonicPush($notifiable)
     {
         return IonicPushMessage::create('my-security-profile')
+            ->message('A message to your user')
+            ->profile('my-security-profile')
+            ->iosBadge(1)
+            ->iosSound('ping.aiff');
+    }
+}
+
+class TestNotificationToEmail extends Notification
+{
+    public function toIonicPush($notifiable)
+    {
+        return IonicPushMessage::create('my-security-profile')
+            ->sendTo('emails')
             ->message('A message to your user')
             ->profile('my-security-profile')
             ->iosBadge(1)

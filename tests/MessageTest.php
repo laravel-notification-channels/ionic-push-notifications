@@ -2,6 +2,7 @@
 
 namespace NotificationChannels\IonicPushNotifications\Test;
 
+use DateTime;
 use Illuminate\Support\Arr;
 use NotificationChannels\IonicPushNotifications\IonicPushMessage;
 use PHPUnit_Framework_TestCase;
@@ -51,6 +52,41 @@ class MessageTest extends PHPUnit_Framework_TestCase
         $this->message->message('myMessage');
 
         $this->assertEquals('myMessage', Arr::get($this->message->toArray(), 'notification.message'));
+    }
+
+    /** @test */
+    public function it_can_set_the_sound()
+    {
+        $this->message->sound('sound.wav');
+
+        $this->assertEquals('sound.wav', Arr::get($this->message->toArray(), 'notification.sound'));
+    }
+
+    /** @test */
+    public function it_can_set_a_schedule_from_string()
+    {
+        $date = new DateTime('tomorrow');
+
+        $this->message->scheduled('tomorrow');
+
+        $this->assertEquals($date->format(DateTime::RFC3339), Arr::get($this->message->toArray(), 'scheduled'));
+    }
+    /** @test */
+    public function it_can_set_a_schedule_from_datetime()
+    {
+        $date = new DateTime('tomorrow');
+
+        $this->message->scheduled($date);
+
+        $this->assertEquals($date->format(DateTime::RFC3339), Arr::get($this->message->toArray(), 'scheduled'));
+    }
+
+    /** @test */
+    public function it_can_set_the_payload()
+    {
+        $this->message->payload(['foo' => 'bar']);
+
+        $this->assertEquals(['foo' => 'bar'], Arr::get($this->message->toArray(), 'notification.payload'));
     }
 
     /** @test */
