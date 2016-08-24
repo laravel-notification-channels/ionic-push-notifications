@@ -71,6 +71,7 @@ class MessageTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals($date->format(DateTime::RFC3339), Arr::get($this->message->toArray(), 'scheduled'));
     }
+
     /** @test */
     public function it_can_set_a_schedule_from_datetime()
     {
