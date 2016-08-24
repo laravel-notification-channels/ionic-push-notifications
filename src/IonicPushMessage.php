@@ -123,7 +123,7 @@ class IonicPushMessage
 
     /**
      * Schedule the message for later delivery.
-     * 
+     *
      * @param  string|DateTime $date
      * @return $this
      */
