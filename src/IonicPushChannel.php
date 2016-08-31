@@ -33,7 +33,9 @@ class IonicPushChannel
      */
     public function send($notifiable, Notification $notification)
     {
-        if (! $routing = collect($notifiable->routeNotificationFor('IonicPush'))) {
+        $routing = collect($notifiable->routeNotificationFor('IonicPush'));
+
+        if (! $routing->first()) {
             return;
         }
 
