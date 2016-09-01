@@ -190,7 +190,7 @@ class IonicPushMessage
             'icon',
             'icon_color',
             'message',
-            'priortiy',
+            'priority',
             'sound',
             'tag',
             'time_to_live',
@@ -211,7 +211,7 @@ class IonicPushMessage
             'badge',
             'payload',
             'sound',
-            'priortiy',
+            'priority',
             'expire',
             'content_available',
         ];
