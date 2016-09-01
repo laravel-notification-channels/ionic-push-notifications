@@ -123,7 +123,7 @@ public function routeNotificationForIonicPush()
 - `iosBadge()`
 - `iosPayload()`
 - `iosSound()`
-- `iosPriortiy()`
+- `iosPriority()`
 - `iosExpire()`
 - `iosContentAvailable()`
 
@@ -136,7 +136,7 @@ public function routeNotificationForIonicPush()
 - `androidIcon()`
 - `androidIconColor()`
 - `androidMessage()`
-- `androidPriortiy()`
+- `androidPriority()`
 - `androidSound()`
 - `androidTag()`
 - `androidTimeToLive()`
