@@ -66,7 +66,7 @@ class FriendRequest extends Notification
             ->title('Your title')
             ->message('Your message')
             ->sound('ping.aiff')
-            ->payload(['foo' => 'bar');
+            ->payload(['foo' => 'bar']);
     }
 }
 ```
