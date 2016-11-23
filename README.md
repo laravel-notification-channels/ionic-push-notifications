@@ -89,7 +89,7 @@ class FriendRequest extends Notification
     {
         return IonicPushMessage::create('my-security-profile')
             ->iosMessage('Your iOS message')
-            ->androidMessage('Your iOS message')
+            ->androidMessage('Your Android message')
             ->iosSound('ping.aiff')
             ->androidSound('ping.aiff');
     }
