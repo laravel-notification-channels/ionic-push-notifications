@@ -3,9 +3,9 @@
 namespace NotificationChannels\IonicPushNotifications;
 
 use GuzzleHttp\Client;
-use NotificationChannels\IonicPushNotifications\Exceptions\CouldNotSendNotification;
 use Illuminate\Notifications\Notification;
 use NotificationChannels\IonicPushNotifications\Exceptions\InvalidConfiguration;
+use NotificationChannels\IonicPushNotifications\Exceptions\CouldNotSendNotification;
 
 class IonicPushChannel
 {
