@@ -117,7 +117,7 @@ public function routeNotificationForIonicPush()
 - `scheduled()`: Schedule a notification for future delivery. Accept `DateTime` object or a date as a string.
 
 #### iOS specific methods
-[See here](http://docs.ionic.io/v2.0.0-beta/docs/push-sending-push#section-basic-api-usage) for full details on these methods.
+[See here](http://legacy.docs.ionic.io/v2.0.0-beta/docs/push-sending-push#section-basic-api-usage) for full details on these methods.
 - `iosMessage()`
 - `iosTitle()`
 - `iosBadge()`
@@ -128,7 +128,7 @@ public function routeNotificationForIonicPush()
 - `iosContentAvailable()`
 
 #### Android specific methods
-[See here](http://docs.ionic.io/v2.0.0-beta/docs/push-sending-push#section-basic-api-usage) for full details on these methods.
+[See here](http://legacy.docs.ionic.io/v2.0.0-beta/docs/push-sending-push#section-basic-api-usage) for full details on these methods.
 - `androidCollapseKey()`
 - `androidContentAvailable()`
 - `androidData()`
