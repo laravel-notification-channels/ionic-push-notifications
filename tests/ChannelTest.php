@@ -2,15 +2,15 @@
 
 namespace NotificationChannels\IonicPushNotifications\Test;
 
+use Mockery;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
+use Orchestra\Testbench\TestCase;
 use Illuminate\Notifications\Notification;
-use Mockery;
-use NotificationChannels\IonicPushNotifications\Exceptions\CouldNotSendNotification;
-use NotificationChannels\IonicPushNotifications\Exceptions\InvalidConfiguration;
 use NotificationChannels\IonicPushNotifications\IonicPushChannel;
 use NotificationChannels\IonicPushNotifications\IonicPushMessage;
-use Orchestra\Testbench\TestCase;
+use NotificationChannels\IonicPushNotifications\Exceptions\InvalidConfiguration;
+use NotificationChannels\IonicPushNotifications\Exceptions\CouldNotSendNotification;
 
 class ChannelTest extends TestCase
 {
@@ -105,7 +105,6 @@ class TestNotifiable
         return 'device_token';
     }
 }
-
 
 class TestNotification extends Notification
 {

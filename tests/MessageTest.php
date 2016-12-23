@@ -4,8 +4,8 @@ namespace NotificationChannels\IonicPushNotifications\Test;
 
 use DateTime;
 use Illuminate\Support\Arr;
-use NotificationChannels\IonicPushNotifications\IonicPushMessage;
 use PHPUnit_Framework_TestCase;
+use NotificationChannels\IonicPushNotifications\IonicPushMessage;
 
 class MessageTest extends PHPUnit_Framework_TestCase
 {
