@@ -63,5 +63,7 @@ class IonicPushChannel
         if ($response->getStatusCode() !== 201) {
             throw CouldNotSendNotification::serviceRespondedWithAnError($response);
         }
+
+        return $response;
     }
 }
