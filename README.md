@@ -1,4 +1,4 @@
-# Ionic Push Notifications Channel for Laravel 5.3
+# Ionic Push Notifications Channel for Laravel
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/laravel-notification-channels/ionic-push-notifications.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/ionic-push-notifications)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
@@ -9,7 +9,7 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/laravel-notification-channels/ionic-push-notifications.svg?style=flat-square)](https://scrutinizer-ci.com/g/laravel-notification-channels/ionic-push-notifications)
 [![Total Downloads](https://img.shields.io/packagist/dt/laravel-notification-channels/ionic-push-notifications.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/ionic-push-notifications)
 
-This package makes it easy to send [Ionic Push Notifications](http://docs.ionic.io/docs/push-overview) with Laravel 5.3.
+This package makes it easy to send [Ionic Push Notifications](http://docs.ionic.io/docs/push-overview) with Laravel.
 
 ## Content
 
