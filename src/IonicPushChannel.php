@@ -34,8 +34,12 @@ class IonicPushChannel
     public function send($notifiable, Notification $notification)
     {
         $routing = collect($notifiable->routeNotificationFor('IonicPush'));
-
-        if (! $routing->first()) {
+        // remove empty device tokens
+        $routing->filter(function ($token) {
+            return ! empty($token);
+        });
+        // if there are no valid device tokens then do not send the notification
+        if (! $routing->count() > 0) {
             return;
         }
 
@@ -48,7 +52,7 @@ class IonicPushChannel
         $message = $notification->toIonicPush($notifiable);
 
         $ionicPushData = array_merge(
-            [$message->getSendToType() => $routing->first()],
+            [$message->getSendToType() => $routing->all()],
             $message->toArray()
         );
 

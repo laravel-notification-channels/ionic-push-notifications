@@ -107,6 +107,16 @@ public function routeNotificationForIonicPush()
 }
 ```
 
+You can also return multiple tokens to send to a group of devices the user may own
+
+
+```php
+public function routeNotificationForIonicPush()
+{
+    return $this->device_tokens;
+}
+```
+
 ### Available Message methods
 
 - `create()`: Accepts a string value of `your-security-profile`.

@@ -26,7 +26,7 @@ class ChannelTest extends TestCase
             ->once()
             ->with('https://api.ionic.io/push/notifications',
                 [
-                    'body' => '{"tokens":"device_token","profile":"my-security-profile","notification":{"message":"A message to your user","ios":{"badge":1,"sound":"ping.aiff"}}}',
+                    'body' => '{"tokens":["device_token"],"profile":"my-security-profile","notification":{"message":"A message to your user","ios":{"badge":1,"sound":"ping.aiff"}}}',
                     'headers' => [
                         'Authorization' => 'Bearer IonicKey',
                         'Content-Type' => 'application/json',
@@ -50,7 +50,7 @@ class ChannelTest extends TestCase
             ->once()
             ->with('https://api.ionic.io/push/notifications',
                 [
-                    'body' => '{"emails":"device_token","profile":"my-security-profile","notification":{"message":"A message to your user","ios":{"badge":1,"sound":"ping.aiff"}}}',
+                    'body' => '{"emails":["device_token"],"profile":"my-security-profile","notification":{"message":"A message to your user","ios":{"badge":1,"sound":"ping.aiff"}}}',
                     'headers' => [
                         'Authorization' => 'Bearer IonicKey',
                         'Content-Type' => 'application/json',
