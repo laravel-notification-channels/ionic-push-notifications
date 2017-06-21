@@ -99,6 +99,7 @@ class FriendRequest extends Notification
 In order to let your Notification know which device token to send to, add the `routeNotificationForIonicPush` method to your Notifiable model.
 
 This method needs to return the device token of the user (or the Ionic Auth email address, or Ionic userID of the user).
+Do not forget to set the method of targeting users with `sendTo()` if necessary (see below).
 
 ```php
 public function routeNotificationForIonicPush()
@@ -125,6 +126,7 @@ public function routeNotificationForIonicPush()
 - `sound()`: The title of your notification (for all platforms). Can be overwritten by platform specific `sound` method (see below).
 - `payload()`: An array of data to send with your notification. Can be overwritten by platform specific `payload` method (see below).
 - `scheduled()`: Schedule a notification for future delivery. Accept `DateTime` object or a date as a string.
+- `sendTo()`: Set the method of targeting users - tokens (default), user_ids, or emails.
 
 #### iOS specific methods
 [See here](http://legacy.docs.ionic.io/v2.0.0-beta/docs/push-sending-push#section-basic-api-usage) for full details on these methods.
