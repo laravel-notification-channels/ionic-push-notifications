@@ -1,6 +1,6 @@
-# ************************
+### ************************
 ### Ionic Cloud, and therefore this package, was deprecated Jan 31st, 2018. See Here for details https://blog.ionicframework.com/sunsetting-ionic-cloud-push-and-auth/
-# ************************
+### ************************
 
 # Ionic Push Notifications Channel for Laravel
 
